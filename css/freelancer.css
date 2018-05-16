@@ -151,6 +151,8 @@ section h2 {
   #mainNav .navbar-nav > li.nav-item > a.nav-link.active {
     color: #fff;
     background: #18BC9C;
+    height: 45px;
+    margin-top: 5px;
   }
   #mainNav .navbar-nav > li.nav-item > a.nav-link.active:active, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:focus, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover {
     color: #fff;
@@ -183,7 +185,7 @@ header.masthead h2 {
 @media (min-width: 992px) {
   header.masthead {
     padding-top: calc(6rem + 106px);
-    padding-bottom: 6rem;
+    padding-bottom: 0rem;
   }
   header.masthead h1 {
     font-size: 4.75em;
@@ -193,6 +195,34 @@ header.masthead h2 {
     font-size: 1.75em;
   }
 }
+
+.site_logo { 
+   margin-top: -100px;
+} 
+
+#srch-term { 
+   height: 45px;
+   margin-top: 5px;
+}
+
+#submit { 
+  height: 45px;
+  margin-top: 5px;
+  margin-left: 10px;
+} 
+
+#srch-img { 
+   height: 30px;
+} 
+
+.movies { 
+  margin-bottom: 20px; 
+} 
+
+.modalImage { 
+   margin-left: 85px; 
+   margin-bottom: 25px;
+} 
 
 .portfolio {
   margin-bottom: -15px;
@@ -344,7 +374,8 @@ a:focus, a:hover, a:active {
 }
 
 .bg-primary {
-  background-color: #18BC9C !important;
+  background-image: url("http://images.all-free-download.com/images/graphicthumb/gorgeous_background_of_the_stage_02_hd_pictures_169915.jpg");
+  background-size: cover;
 }
 
 .bg-secondary {
