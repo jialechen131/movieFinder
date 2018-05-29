@@ -215,18 +215,24 @@ header.masthead h2 {
    height: 30px;
 } 
 
-.movies { 
-  margin-bottom: 20px; 
-} 
-
-.modalImage { 
-   margin-left: 85px; 
-   margin-bottom: 25px;
+.movie_title { 
+   margin-top: -20px;
+   padding-bottom: 20px;
+   text-align: center;
 } 
 
 .portfolio {
   margin-bottom: -15px;
 }
+
+.about-text { 
+   text-align: justify;
+} 
+
+.moviePosters { 
+    height: 500px;
+    width: 384px;
+} 
 
 .portfolio .portfolio-item {
   position: relative;
@@ -374,7 +380,7 @@ a:focus, a:hover, a:active {
 }
 
 .bg-primary {
-  background-image: url("http://images.all-free-download.com/images/graphicthumb/gorgeous_background_of_the_stage_02_hd_pictures_169915.jpg");
+  background-image: url("http://images.all-free-download.com/images/graphiclarge/red_stage_curtain_hd_picture_165757.jpg");
   background-size: cover;
 }
 
