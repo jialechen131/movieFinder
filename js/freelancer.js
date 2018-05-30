@@ -1,6 +1,25 @@
 /* global $ */
 $(document).ready(function() {
     console.log("Document Ready...");
+    //  movieImdb-tt2704998  movieImdb-tt2395427  movieImdb-tt2395427
+    // In the future, we would like to get these from an API
+    var currentHitMovies = [
+      {imdbID: "tt4154756", Title: "Avengers Infinity War", Poster: "https://ia.media-imdb.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg"},
+      {imdbID: "tt1677720", Title: "Ready Player One", Poster: "https://ia.media-imdb.com/images/M/MV5BY2JiYTNmZTctYTQ1OC00YjU4LWEwMjYtZjkwY2Y5MDI0OTU3XkEyXkFqcGdeQXVyNTI4MzE4MDU@._V1_SX300.jpg"},
+      
+      {Title: "Game Night", imdbID: "tt2704998", Poster: "https://ia.media-imdb.com/images/M/MV5BMjQxMDE5NDg0NV5BMl5BanBnXkFtZTgwNTA5MDE2NDM@._V1_SX300.jpg"},
+
+{Title: "Deadpool 2", imdbID: "tt5463162", Poster: "https://ia.media-imdb.com/images/M/MV5BMjI3Njg3MzAxNF5BMl5BanBnXkFtZTgwNjI2OTY0NTM@._V1_SX300.jpg"},
+
+{Title: "Black Panther", imdbID: "tt1825683", Poster: "https://ia.media-imdb.com/images/M/MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI@._V1_SX300.jpg"},
+{Title: "Rampage", imdbID: "tt2231461", Poster: "https://ia.media-imdb.com/images/M/MV5BNDA1NjA3ODU3OV5BMl5BanBnXkFtZTgwOTg3MTIwNTM@._V1_SX300.jpg"},
+
+      
+      
+      
+    ]
+    renderMovies(currentHitMovies);
+    
     $("#srch-term").keyup(function(event) {
         if (event.keyCode === 13) {
             $("#submit").click();
@@ -25,19 +44,27 @@ $(document).ready(function() {
                         '<p class="warningSign">' + "No movie was found with those characters..." + '</p>'
                     );
                 }
-                for (var i = 0; i < response.Search.length; i++) {
-                    if (response.Search[i].Poster !== "N/A") {
+                renderMovies(response.Search);
+            },
+        });
+    });
+    
+});
+
+function renderMovies(data) {
+  for (var i = 0; i < data.length; i++) {
+                    if (data[i].Poster !== "N/A") {
                         $('.gallery').append(
                            '<div class="col-md-6 col-lg-4">\
-                               <a class="portfolio-item d-block mx-auto movies" data-toggle="modal" id="movieImdb-' + response.Search[i].imdbID +'" href="#modal-' + i + '" >\
+                               <a class="portfolio-item d-block mx-auto movies" data-toggle="modal" id="movieImdb-' + data[i].imdbID +'" href="#modal-' + i + '" >\
                                  <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">\
                                    <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">\
                                      <i class="fa fa-search-plus fa-3x"></i>\
                                    </div>\
                                  </div>\
-                                 <img class="img-fluid moviePosters" src=' + response.Search[i].Poster + '>\
+                                 <img class="img-fluid moviePosters" src=' + data[i].Poster + '>\
                                </a>\
-                               <h4 class="movie_title">'+ response.Search[i].Title +'</h4>\
+                               <h4 class="movie_title">'+ data[i].Title +'</h4>\
                              </div>\
                              \
                            <div class="modal portfolio-modal" id="modal-' + i + '">\
@@ -49,22 +76,22 @@ $(document).ready(function() {
                                  <div class="container text-center">\
                                    <div class="row">\
                                      <div class="col-lg-8 mx-auto">\
-                                       <h2 class="modal-title text-secondary text-uppercase mb-0" id="myModalLabel">' + response.Search[i].Title + '</h2>\
+                                       <h2 class="modal-title text-secondary text-uppercase mb-0" id="myModalLabel">' + data[i].Title + '</h2>\
                                        <hr class="star-dark mb-5">\
-                                       <img class="img-fluid mb-5 modalImage" src="' + response.Search[i].Poster + '" alt="">\
+                                       <img class="img-fluid mb-5 modalImage" src="' + data[i].Poster + '" alt="">\
                                        <section class="movie_description">\
-                                       <div class="contain"><p class="mb-5"> Movie Title: </p></div><p id= "original_title-' + response.Search[i].imdbID + '" ></p>\
-                                       <div class="contain"><p class="mb-5"> Genres </p></div><p id= "genre-' + response.Search[i].imdbID + '" > Genres: </p>\
-                                       <div class="contain"><p class="mb-5"> Movie Site: </p></div><p id= "movie_homepage-' + response.Search[i].imdbID + '" ></p>\
-                                       <div class="contain"><p class="mb-5"> Plot: </p></div><p id= "plot-' + response.Search[i].imdbID + '" > Plot: </p>\
-                                       <div class="contain"><p class="mb-5"> Release Date: </p></div><p id= "release_date-' + response.Search[i].imdbID + '" ></p>\
-                                       <div class="contain"><p class="mb-5"> Duration: </p></div><p id= "run_time-' + response.Search[i].imdbID + '" ></p>\
-                                       <div class="contain"><p class="mb-5"> Slogan: </p></div><p id= "tag_line-' + response.Search[i].imdbID +'" ></p></div>\
-                                       <div class="contain"><p class="mb-5"> Rating: </p></div><p id= "rating-' + response.Search[i].imdbID + '" ></p></div>\
+                                       <div class="contain"><p class="mb-5"> Movie Title: </p></div><p id= "original_title-' + data[i].imdbID + '" ></p>\
+                                       <div class="contain"><p class="mb-5"> Genres </p></div><p id= "genre-' + data[i].imdbID + '" > Genres: </p>\
+                                       <div class="contain"><p class="mb-5"> Movie Site: </p></div><p id= "movie_homepage-' + data[i].imdbID + '" ></p>\
+                                       <div class="contain"><p class="mb-5"> Plot: </p></div><p id= "plot-' + data[i].imdbID + '" > Plot: </p>\
+                                       <div class="contain"><p class="mb-5"> Release Date: </p></div><p id= "release_date-' + data[i].imdbID + '" ></p>\
+                                       <div class="contain"><p class="mb-5"> Duration: </p></div><p id= "run_time-' + data[i].imdbID + '" ></p>\
+                                       <div class="contain"><p class="mb-5"> Slogan: </p></div><p id= "tag_line-' + data[i].imdbID +'" ></p></div>\
+                                       <div class="contain"><p class="mb-5"> Rating: </p></div><p id= "rating-' + data[i].imdbID + '" ></p></div>\
                                        </section>\
                                        <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" data-dismiss="modal" href="#">\
                                          <i class="fa fa-close"></i>\
-                                       Close Project</a>\
+                                       Close</a>\
                                      </div>\
                                    </div>\
                                  </div>\
@@ -72,16 +99,12 @@ $(document).ready(function() {
                              </div>\
                            </div>'
                         );
-                        console.log("The amount of Movies being displayed to the screen: " + response.Search.length);
-                        console.log("The total amount of possible Movies " + response.Search[1].totalResults);
+                        console.log("The amount of Movies being displayed to the screen: " + data.length);
+                        console.log("The total amount of possible Movies " + data[1].totalResults);
                     }
                 }
                 addModalClick();
-            },
-        });
-    });
-    
-});
+}
 
 function addModalClick() {
     $(".movies").click(function(event) { 
