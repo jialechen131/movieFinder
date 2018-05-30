@@ -234,6 +234,20 @@ header.masthead h2 {
     width: 384px;
 } 
 
+.modalImage { 
+  height: 715px;  
+   width: 482px;
+} 
+
+.contain { 
+   margin-bottom: -48px;
+} 
+
+.movie-description { 
+   margin-top: -40px; 
+   
+} 
+
 .portfolio .portfolio-item {
   position: relative;
   display: block;

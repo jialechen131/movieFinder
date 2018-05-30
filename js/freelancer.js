@@ -52,15 +52,16 @@ $(document).ready(function() {
                                        <h2 class="modal-title text-secondary text-uppercase mb-0" id="myModalLabel">' + response.Search[i].Title + '</h2>\
                                        <hr class="star-dark mb-5">\
                                        <img class="img-fluid mb-5 modalImage" src="' + response.Search[i].Poster + '" alt="">\
-                                       <div class="movie_description">\
-                                       <p class="mb-5"> Movie Title: </p> <p id= "original_title-' + response.Search[i].imdbID + '" ></p>\
-                                       <p class="mb-5"> Genres </p> <p id= "genre-' + response.Search[i].imdbID + '" > Genres: </p>\
-                                       <p class="mb-5"> Movie Site: </p> <p id= "movie_homepage-' + response.Search[i].imdbID + '" ></p>\
-                                       <p class="mb-5"> Plot: </p> <p id= "plot-' + response.Search[i].imdbID + '" > Plot: </p>\
-                                       <p class="mb-5"> Release Date: </p> <p id= "release_date-' + response.Search[i].imdbID + '" ></p>\
-                                       <p class="mb-5"> Duration: </p> <p id= "run_time-' + response.Search[i].imdbID + '" ></p>\
-                                       <p class="mb-5"> Slogan: </p> <p id= "tag_line-' + response.Search[i].imdbID +'" ></p>\
-                                       <p class="mb-5"> Rating: </p> <p id= "rating-' + response.Search[i].imdbID + '" ></p>\
+                                       <section class="movie_description">\
+                                       <div class="contain"><p class="mb-5"> Movie Title: </p></div><p id= "original_title-' + response.Search[i].imdbID + '" ></p>\
+                                       <div class="contain"><p class="mb-5"> Genres </p></div><p id= "genre-' + response.Search[i].imdbID + '" > Genres: </p>\
+                                       <div class="contain"><p class="mb-5"> Movie Site: </p></div><p id= "movie_homepage-' + response.Search[i].imdbID + '" ></p>\
+                                       <div class="contain"><p class="mb-5"> Plot: </p></div><p id= "plot-' + response.Search[i].imdbID + '" > Plot: </p>\
+                                       <div class="contain"><p class="mb-5"> Release Date: </p></div><p id= "release_date-' + response.Search[i].imdbID + '" ></p>\
+                                       <div class="contain"><p class="mb-5"> Duration: </p></div><p id= "run_time-' + response.Search[i].imdbID + '" ></p>\
+                                       <div class="contain"><p class="mb-5"> Slogan: </p></div><p id= "tag_line-' + response.Search[i].imdbID +'" ></p></div>\
+                                       <div class="contain"><p class="mb-5"> Rating: </p></div><p id= "rating-' + response.Search[i].imdbID + '" ></p></div>\
+                                       </section>\
                                        <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" data-dismiss="modal" href="#">\
                                          <i class="fa fa-close"></i>\
                                        Close Project</a>\
